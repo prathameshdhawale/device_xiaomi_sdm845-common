@@ -82,7 +82,7 @@ PRODUCT_BOOT_JARS += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.qcom
+    power.qcom:64
 
 # QCOM
 PRODUCT_COPY_FILES += \
