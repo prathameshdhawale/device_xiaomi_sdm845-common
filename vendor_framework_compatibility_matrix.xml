@@ -1,80 +1,117 @@
-<!-- Copyright (c) 2018, The Linux Foundation. All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are
-met:
-    * Redistributions of source code must retain the above copyright
-      notice, this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above
-      copyright notice, this list of conditions and the following
-      disclaimer in the documentation and/or other materials provided
-      with the distribution.
-    * Neither the name of The Linux Foundation nor the names of its
-      contributors may be used to endorse or promote products derived
-      from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
-WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
-ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
-BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
-BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
-OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
-IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+<!--
+    Input:
+        vendor_framework_compatibility_matrix.xml
 -->
 <compatibility-matrix version="1.0" type="framework">
     <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.perf</name>
-         <version>1.0</version>
-         <interface>
-            <name>IPerf</name>
+        <name>android.hardware.gnss</name>
+        <version>1.0-1</version>
+        <interface>
+            <name>IGnss</name>
             <instance>default</instance>
-         </interface>
+        </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.display.color</name>
+        <name>android.hardware.gnss</name>
+        <version>1.0</version>
+        <interface>
+            <name>IGnss</name>
+            <instance>gnss_vendor</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.health</name>
+        <version>2.0</version>
+        <interface>
+            <name>IHealth</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.nfc</name>
+        <version>1.0</version>
+        <interface>
+            <name>INfc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.radio</name>
         <version>1.0-2</version>
         <interface>
-             <name>IDisplayColor</name>
-             <instance>default</instance>
+            <name>IRadio</name>
+            <instance>slot1</instance>
+            <instance>slot2</instance>
+        </interface>
+        <interface>
+            <name>ISap</name>
+            <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.display.postproc</name>
+        <name>android.hardware.secure_element</name>
         <version>1.0</version>
         <interface>
-             <name>IDisplayPostproc</name>
-             <instance>default</instance>
+            <name>ISecureElement</name>
+            <instance>xiaomi-SIM1</instance>
+            <instance>xiaomi-SIM2</instance>
+            <instance>xiaomi-eSE1</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.display.config</name>
-        <version>1.0-4</version>
-        <interface>
-             <name>IDisplayConfig</name>
-             <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.qteeconnector</name>
+        <name>android.hardware.wifi.supplicant</name>
         <version>1.0</version>
         <interface>
-            <name>IAppConnector</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>IGPAppConnector</name>
+            <name>ISupplicant</name>
             <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.factory</name>
+        <name>com.fingerprints.extension</name>
         <version>1.0</version>
         <interface>
-            <name>IFactory</name>
+            <name>IFingerprintAuthenticator</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintCalibration</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintEngineering</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintNavigation</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintRecalibration</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintSenseTouch</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintSensorTest</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>com.qualcomm.qti.ant</name>
+        <version>1.0</version>
+        <interface>
+            <name>IAntHci</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>com.qualcomm.qti.bluetooth_audio</name>
+        <version>1.0</version>
+        <interface>
+            <name>IBluetoothAudio</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -87,86 +124,122 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>android.hardware.nfc</name>
-        <version>1.0</version>
+        <name>com.qualcomm.qti.imscmservice</name>
+        <version>2.0-1</version>
         <interface>
-            <name>INfc</name>
-            <instance>default</instance>
+            <name>IImsCmService</name>
+            <instance>qti.ims.connectionmanagerservice</instance>
         </interface>
     </hal>
-   <hal format="hidl" optional="true">
-       <name>android.hardware.radio</name>
-       <version>1.0-2</version>
-       <interface>
-          <name>IRadio</name>
-          <instance>slot1</instance>
-          <instance>slot2</instance>
-       </interface>
-       <interface>
-           <name>ISap</name>
-           <instance>slot1</instance>
-           <instance>slot2</instance>
-       </interface>
-   </hal>
-   <hal format="hidl" optional="true">
-        <name>com.qualcomm.qti.ant</name>
-        <version>1.0</version>
+    <hal format="hidl" optional="true">
+        <name>com.qualcomm.qti.uceservice</name>
+        <version>2.0</version>
         <interface>
-            <name>IAntHci</name>
-            <instance>default</instance>
+            <name>IUceService</name>
+            <instance>com.qualcomm.qti.uceservice</instance>
         </interface>
-   </hal>
-   <hal format="hidl" optional="true">
-        <name>com.qualcomm.qti.bluetooth_audio</name>
-        <version>1.0</version>
-        <interface>
-            <name>IBluetoothAudio</name>
-            <instance>default</instance>
-        </interface>
-   </hal>
-   <hal format="hidl" optional="true">
-       <name>com.qualcomm.qti.imscmservice</name>
-       <version>2.0-1</version>
-       <interface>
-         <name>IImsCmService</name>
-         <instance>qti.ims.connectionmanagerservice</instance>
-       </interface>
-   </hal>
-   <hal format="hidl" optional="true">
-       <name>com.qualcomm.qti.uceservice</name>
-       <version>2.0</version>
-       <interface>
-         <name>IUceService</name>
-         <instance>com.qualcomm.qti.uceservice</instance>
-       </interface>
-   </hal>
+    </hal>
     <hal format="hidl" optional="true">
         <name>com.qualcomm.qti.wifidisplayhal</name>
         <version>1.0</version>
         <interface>
-            <name>IHDCPSession</name>
-            <instance>wifidisplayhdcphal</instance>
-        </interface>
-        <interface>
             <name>IDSManager</name>
             <instance>wifidisplaydshal</instance>
         </interface>
-    </hal>
-    <!--  Wipower  -->
-    <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.wipower</name>
-        <version>1.0</version>
         <interface>
-            <name>IWipower</name>
+            <name>IHDCPSession</name>
+            <instance>wifidisplayhdcphal</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>com.quicinc.cne.api</name>
+        <version>1.0-1</version>
+        <interface>
+            <name>IApiService</name>
+            <instance>cnd</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>com.quicinc.cne.server</name>
+        <version>2.0-2</version>
+        <interface>
+            <name>IServer</name>
+            <instance>cnd</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.display.color</name>
+        <version>1.0-2</version>
+        <interface>
+            <name>IDisplayColor</name>
             <instance>default</instance>
         </interface>
     </hal>
-
+    <hal format="hidl" optional="true">
+        <name>vendor.display.config</name>
+        <version>1.0-2</version>
+        <interface>
+            <name>IDisplayConfig</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.display.postproc</name>
+        <version>1.0</version>
+        <interface>
+            <name>IDisplayPostproc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.goodix.hardware.biometrics.fingerprint</name>
+        <version>2.1</version>
+        <interface>
+            <name>IGoodixFingerprintDaemon</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IGoodixFingerprintDaemonExt</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IGoodixFingerprintDaemonFido</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IGoodixFingerprintDaemonHbd</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.goodix.hardware.fingerprintextension</name>
+        <version>1.0</version>
+        <interface>
+            <name>IGoodixBiometricsFingerprint</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl" optional="true">
         <name>vendor.nxp.hardware.nfc</name>
         <version>1.0</version>
         <interface>
             <name>INqNfc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.nxp.nxpnfc</name>
+        <version>1.0</version>
+        <interface>
+            <name>INxpNfc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.data.factory</name>
+        <version>1.0</version>
+        <interface>
+            <name>IFactory</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -179,11 +252,12 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>android.hardware.gnss</name>
-        <version>1.0-1</version>
+        <name>vendor.qti.gnss</name>
+        <version>1.0-2</version>
+        <version>2.0</version>
         <interface>
-            <name>IGnss</name>
-            <instance>default</instance>
+            <name>ILocHidlGnss</name>
+            <instance>gnss_vendor</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -196,7 +270,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.data.latency</name>
-        <impl level="generic"></impl>
         <version>1.0</version>
         <interface>
             <name>ILinkLatency</name>
@@ -204,12 +277,11 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.data.connection</name>
+        <name>vendor.qti.hardware.factory</name>
         <version>1.0</version>
         <interface>
-            <name>IDataConnection</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
+            <name>IFactory</name>
+            <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -229,6 +301,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.perf</name>
+        <version>1.0</version>
+        <interface>
+            <name>IPerf</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.qdutils_disp</name>
         <version>1.0</version>
         <interface>
@@ -236,23 +316,35 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
-   <hal format="hidl" optional="true">
-       <name>vendor.qti.hardware.radio.am</name>
-       <version>1.0</version>
-       <interface>
-           <name>IQcRilAudio</name>
-           <instance>slot1</instance>
-           <instance>slot2</instance>
-       </interface>
-   </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.qteeconnector</name>
+        <version>1.0</version>
+        <interface>
+            <name>IAppConnector</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IGPAppConnector</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.radio.am</name>
+        <version>1.0</version>
+        <interface>
+            <name>IQcRilAudio</name>
+            <instance>slot1</instance>
+            <instance>slot2</instance>
+        </interface>
+    </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.radio.ims</name>
-           <version>1.0-4</version>
-           <interface>
-               <name>IImsRadio</name>
-               <instance>imsradio0</instance>
-               <instance>imsradio1</instance>
-           </interface>
+        <version>1.0-3</version>
+        <interface>
+            <name>IImsRadio</name>
+            <instance>imsradio0</instance>
+            <instance>imsradio1</instance>
+        </interface>
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.radio.lpa</name>
@@ -265,12 +357,12 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.radio.qcrilhook</name>
-           <version>1.0</version>
-           <interface>
-               <name>IQtiOemHook</name>
-               <instance>oemhook0</instance>
-               <instance>oemhook1</instance>
-           </interface>
+        <version>1.0</version>
+        <interface>
+            <name>IQtiOemHook</name>
+            <instance>oemhook0</instance>
+            <instance>oemhook1</instance>
+        </interface>
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.radio.qtiradio</name>
@@ -280,6 +372,15 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <name>IQtiRadio</name>
             <instance>slot1</instance>
             <instance>slot2</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.radio.uim</name>
+        <version>1.1</version>
+        <interface>
+            <name>IUim</name>
+            <instance>Uim0</instance>
+            <instance>Uim1</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -301,12 +402,23 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.radio.uim</name>
-        <version>1.1</version>
+        <name>vendor.qti.hardware.scve.objecttracker</name>
+        <version>1.0</version>
         <interface>
-            <name>IUim</name>
-            <instance>Uim0</instance>
-            <instance>Uim1</instance>
+            <name>IObjectTracker</name>
+            <instance>objectTracker</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.scve.panorama</name>
+        <version>1.0</version>
+        <interface>
+            <name>IPanoramaStitching</name>
+            <instance>panoStitching</instance>
+        </interface>
+        <interface>
+            <name>IPanoramaTracking</name>
+            <instance>panoTracking</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -342,10 +454,26 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>android.hardware.wifi.supplicant</name>
+        <name>vendor.qti.hardware.wifi.hostapd</name>
         <version>1.0</version>
         <interface>
-            <name>ISupplicant</name>
+            <name>IHostapdVendor</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.wifi.keystore</name>
+        <version>1.0</version>
+        <interface>
+            <name>IKeystoreExt</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.wifi.supplicant</name>
+        <version>2.0</version>
+        <interface>
+            <name>ISupplicantVendor</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -366,6 +494,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl" optional="true">
+        <name>vendor.qti.ims.callinfo</name>
+        <version>1.0</version>
+        <interface>
+            <name>IService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
         <name>vendor.qti.imsrtpservice</name>
         <version>1.0</version>
         <interface>
@@ -382,68 +518,99 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>android.hardware.gnss</name>
+        <name>vendor.synaptics.fingerprints.interfaces.extensions</name>
         <version>1.0</version>
         <interface>
-            <name>IGnss</name>
-            <instance>gnss_vendor</instance>
+            <name>IFpCollection</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>INavigation</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>ISensorTest</name>
+            <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.qti.gnss</name>
+        <name>vendor.xiaomi.hardware.citsensorservice</name>
+        <version>1.1</version>
+        <interface>
+            <name>ICitSensorService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.xiaomi.hardware.displayfeature</name>
+        <version>1.0</version>
+        <interface>
+            <name>IDisplayFeature</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.xiaomi.hardware.fingerprintextension</name>
+        <version>1.0</version>
+        <interface>
+            <name>IXiaomiFingerprint</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.xiaomi.hardware.mfidoca</name>
+        <version>1.0</version>
+        <interface>
+            <name>IFidoService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.xiaomi.hardware.misys</name>
+        <version>1.0</version>
+        <interface>
+            <name>IMiSys</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.xiaomi.hardware.mlipay</name>
+        <version>1.0-1</version>
+        <interface>
+            <name>IMlipayService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.xiaomi.hardware.mtdservice</name>
         <version>1.0-2</version>
-        <version>2.0</version>
         <interface>
-            <name>ILocHidlGnss</name>
-            <instance>gnss_vendor</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.wifi.supplicant</name>
-        <version>2.0</version>
-        <interface>
-            <name>ISupplicantVendor</name>
+            <name>IMTService</name>
             <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.wifi.hostapd</name>
-        <version>1.0</version>
+        <name>vendor.xiaomi.hardware.tidaservice</name>
+        <version>1.0-1</version>
         <interface>
-            <name>IHostapdVendor</name>
+            <name>ITidaService</name>
             <instance>default</instance>
         </interface>
     </hal>
-   <hal format="hidl" optional="true">
-       <name>vendor.qti.ims.callinfo</name>
-       <version>1.0</version>
-       <interface>
-         <name>IService</name>
-         <instance>default</instance>
-       </interface>
-   </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.qti.data.factory</name>
+        <name>vendor.xiaomi.hardware.tpdbg</name>
         <version>1.0</version>
         <interface>
-            <name>IFactory</name>
+            <name>ITpdbg</name>
             <instance>default</instance>
         </interface>
     </hal>
-   <hal format="hidl" optional="true">
-       <name>vendor.qti.hardware.wifi.wifilearner</name>
-       <version>1.0</version>
-       <interface>
-           <name>IWifiStats</name>
-           <instance>wifiStats</instance>
-       </interface>
-   </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.improvetouch.touchcompanion</name>
+        <name>vendor.xiaomi.hardware.vsimapp</name>
         <version>1.0</version>
         <interface>
-            <name>ITouchCompanion</name>
-            <instance>TouchCompanionService</instance>
+            <name>IVSIMService</name>
+            <instance>default</instance>
         </interface>
     </hal>
 </compatibility-matrix>
